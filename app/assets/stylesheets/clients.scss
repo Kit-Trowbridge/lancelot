@@ -1,7 +1,6 @@
 @import "config/colors";
 
 .clients-container {
-  min-height: 100vh;
   background-color: #F4F4F4;
   padding: 2rem;
   font-family: 'Noto Sans', sans-serif;
@@ -13,6 +12,7 @@
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
+
   .btn {
     &.btn-success,
     &.btn-secondary,
@@ -149,4 +149,8 @@
       gap: 1rem;
     }
   }
+}
+
+.container {
+  @extend .clients-container;
 }
