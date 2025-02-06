@@ -1,7 +1,11 @@
 <div class="container">
-  <p><em>Start work on <%= @timesheet.project.name %>!</em></p>
+
   <%= render "timestamps/start_button", timesheet: @timesheet, timestamp: @timestamp %>
-  <%= link_to 'View timesheet',
-      client_project_timesheet_path(@timesheet.project.client, @timesheet.project, @timesheet),
-      class: "btn-medieval" %>
+  <div class="sw-new-info d-flex justify-content-between align-items-center">
+    <p><em>Start working on <%= @timesheet.project.name %>!</em></p>
+    <%= link_to 'View timesheet',
+        client_project_timesheet_path(@timesheet.project.client, @timesheet.project, @timesheet),
+        class: "btn-medieval" %>
+
+  </div>
 </div>
