@@ -32,6 +32,7 @@
     color: #666;
     text-align: center;
     border-bottom: 1px solid #E2C04F;
+    margin-bottom: 0;
   }
 
   #questions {
@@ -115,7 +116,7 @@
       textarea.chat-input {
         // width: 80vw;
         // max-width: 900px;
-        width: 70%;
+        width: 80%;
         flex-grow: 0;
         border: 2px solid #7D0101;
         border-radius: 12px;
