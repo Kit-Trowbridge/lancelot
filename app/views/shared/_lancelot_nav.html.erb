@@ -5,6 +5,25 @@
         <%= link_to new_timesheet_timestamp_path(Timestamp.last.timesheet), class: "btn-medieval" do %>
           <i class="fas fa-clock"></i> Start Stopwatch
         <% end %>
+       <%= link_to dashboard_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png", class: "logo" %>
+       <% end %>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="position-relative d-inline-block" data-controller="popup">
+          <%= link_to questions_path,
+            data: {
+              action: "mouseenter->popup#showPopup mouseleave->popup#hidePopup"
+            } do %>
+            <%= image_tag "lance_broken.png", class: "broken_sword btn-lance" %>
+          <% end %>
+
+          <div data-popup-target="popup" class="popup-image hidden position-absolute" style="top: 100%; left: 0;">
+            <img src="<%= asset_path('primary_merlin.png') %>" alt="Popup Image" class="popup-image" />
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
