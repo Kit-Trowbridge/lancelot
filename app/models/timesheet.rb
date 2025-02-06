@@ -1,7 +1,9 @@
 class Timesheet < ApplicationRecord
   belongs_to :project
   has_many :timestamps
-  has_one :invoice
+  has_one :invoice, dependent: :destroy
+
+  after_create :ensure_invoice_exists
 
   def total
     count = 0
@@ -17,5 +19,11 @@ class Timesheet < ApplicationRecord
     else
       "#{timestamps.first.start_time.strftime('%b %d, %Y')} - #{timestamps.last.end_time.strftime('%b %d, %Y')}"
     end
+  end
+
+  private
+
+  def ensure_invoice_exists
+    create_invoice if invoice.nil?
   end
 end

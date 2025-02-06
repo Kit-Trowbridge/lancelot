@@ -10,12 +10,15 @@
 <% end %>-->
 
 <%= simple_form_for question,
-  html: { data: { controller: "reset-form", action: "keydown->reset-form#submitOnEnter turbo:submit-end->reset-form#reset" }} do |f| %>
-  <div class="input-group mb-3 w-100">
-    <div class="form-floating">
-      <%= f.input :user_question, label: false, wrapper: false %>
-      <!--<%= f.label :user_question, "Ask Merlin" %>-->
-    </div>
-    <%= f.submit "Ask", id: "new-question-button", class: "btn btn-primary" %>
+   html: { data: { controller: "reset-form", action: "keydown->reset-form#submitOnEnter turbo:submit-end->reset-form#reset" }} do |f| %>
+  <div class="form-group">
+    <%= f.input :user_question,
+                label: false,
+                 <!--placeholder: "Ask Merlin...",-->
+                input_html: {
+                  class: 'chat-input',
+                  rows: 4
+                } %>
+    <%= f.submit "Ask", class: "btn-medieval" %>
   </div>
 <% end %>

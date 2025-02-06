@@ -3,15 +3,8 @@
     <div class="header-top">
       <h1>Welcome, Freelancer</h1>
       <div class="header-actions">
-        <span class="user-email">Logged in as: <%= current_user.email %></span>
-        <%= link_to edit_user_registration_path, class: 'btn-medieval' do %>
-          <i class="fas fa-user-edit"></i>
-          Edit Profile
-        <% end %>
-        <%= link_to destroy_user_session_path, data: { "turbo-method": :delete }, class: 'btn-medieval' do %>
-          <i class="fas fa-sign-out-alt"></i>
-          Logout
-        <% end %>
+        <span class="user-email"></span>
+
       </div>
     </div>
   </div>
@@ -56,7 +49,6 @@
           <%= link_to new_client_path, class: 'btn-medieval' do %>
             <i class="fas fa-user-plus"></i> New Client
           <% end %>
-
           <%= link_to clients_path, class: 'btn-medieval' do %>
             <i class="fas fa-users"></i> View Clients
           <% end %>
@@ -68,7 +60,6 @@
             <%= link_to new_client_project_path(client), class: 'btn-medieval' do %>
               <i class="fas fa-plus"></i> New Project
             <% end %>
-
             <%= link_to projects_path, class: 'btn-medieval' do %>
               <i class="fas fa-project-diagram"></i> View Projects
             <% end %>
@@ -76,16 +67,8 @@
         </div>
 
         <div class="action-row">
-            <!--
-            <% if current_user.clients.any? && current_user.clients.first.projects.any? %>
-              <% client = current_user.clients.first %>
-              <%= link_to new_client_project_timesheet_path(client, client.projects.first), class: 'btn-medieval' do %>
-                <i class="fas fa-clock"></i> New Timesheet
-            <% end %>
-            -->
-
+          <% if Timestamp.last.present? %>
             <% if Timestamp.last.end_time.present? %>
-              <!--currently just goes to whatever the last timesheet is.. but would be good to be able to select a project-->
               <%= link_to new_timesheet_timestamp_path(Timestamp.last.timesheet), class: 'btn-medieval' do %>
                 <i class="fas fa-clock"></i> Stopwatch
               <% end %>
@@ -94,11 +77,15 @@
                 <i class="fas fa-clock"></i> Stopwatch
               <% end %>
             <% end %>
+          <% end %>
 
-            <% if current_user.timesheets.any? %>
-              <%= link_to timesheet_invoice_path(current_user.timesheets.first, current_user.timesheets.first.invoice ), class: 'btn-medieval' do %>
-                <i class="fas fa-file-invoice"></i> Invoice
-              <% end %>
+          <% if current_user.timesheets.any? %>
+            <% timesheet = current_user.timesheets.first %>
+            <% if timesheet.invoice.nil? %>
+              <% timesheet.create_invoice %>
+            <% end %>
+            <%= link_to timesheet_invoice_path(timesheet, timesheet.invoice), class: 'btn-medieval' do %>
+              <i class="fas fa-file-invoice"></i> Invoice
             <% end %>
           <% end %>
         </div>
@@ -119,3 +106,4 @@
       <% end %>
     </div>
   </div>
+</div>
