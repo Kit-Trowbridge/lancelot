@@ -1,5 +1,5 @@
 <%= simple_form_for [timesheet, timestamp] do |f| %>
-    <%= f.input :task_description %>
+    <%= f.input :task_description, label: "What are working on for the #{timesheet.project.name} project?" %>
     <%= hidden_field_tag :redirect_to, request.fullpath %>
     <%= f.submit 'Add', class: 'btn mt-auto btn-medieval' %>
 <% end %>

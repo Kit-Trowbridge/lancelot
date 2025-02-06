@@ -18,11 +18,18 @@
   // padding: 1.5rem;
 }
 
+.sw-new-info {
+  p {
+    margin-bottom: 0;
+    color: $primary;
+  }
+}
 
 
 .stopwatch-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 32px;
 }
 
 // .stopwatch-motion-container {
@@ -66,4 +73,13 @@
   &:hover {
     animation: expand 0.5s forwards;
   }
+}
+
+.stopwatch-form {
+  font-style: italic;
+  color: $primary;
+  border: 2px solid $red;
+  border-radius: 16px;
+  padding: 1.5rem;
+
 }
