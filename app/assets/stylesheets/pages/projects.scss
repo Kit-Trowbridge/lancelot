@@ -1,6 +1,6 @@
 @import "config/colors";
 
-.clients-container {
+.projects-container {
   min-height: 100vh;
   background-color: #F4F4F4;
   padding: 2rem;
@@ -13,6 +13,7 @@
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
+
   .btn {
     &.btn-success,
     &.btn-secondary,
@@ -37,7 +38,7 @@
     }
   }
 
-  .client-card {
+  .project-card {
     background-color: #FFFFFF;
     border: 2px solid #7D0101;
     border-radius: 12px;
@@ -45,6 +46,8 @@
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-5px);
@@ -66,17 +69,12 @@
         font-size: 1rem;
       }
     }
+  }
 
-    .stretched-link {
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
+  .project-status {
+    font-size: 14px;
+    font-weight: bold;
+    color: #7D0101;
   }
 
   .archive-button {
@@ -97,11 +95,11 @@
       }
 
       &.btn-success {
-        border-color: #28a745;
-        color: #28a745;
+        border-color: #7D0101;
+        color: #7D0101;
 
         &:hover {
-          background-color: #28a745;
+          background-color: #7D0101;
           color: #FFFFFF;
         }
       }
