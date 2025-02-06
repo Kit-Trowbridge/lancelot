@@ -1,10 +1,10 @@
 <div class="container mb-5 timesheet">
   <div class="d-flex justify-content-between">
     <div class="ps-2 timesheet-header">
-      <h1><%= link_to @timesheet.project.name,
+      <h2><%= link_to @timesheet.project.name,
                       client_project_path(@timesheet.project.client, @timesheet.project) %>
-      </h1>
-      <h1><%= @timesheet.title %></h1>
+      </h2>
+      <h2><%= @timesheet.title %></h2>
     </div>
     <% if @timesheet.invoice.present? %>
       <%= link_to 'View invoice', timesheet_invoice_path(@timesheet, @timesheet.invoice), class: "btn blue-button w-auto align-self-start" %>
