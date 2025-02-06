@@ -15,9 +15,9 @@
     <% unless params[:archived] == "true" %>
       <%= link_to "Back to Clients", clients_path, class: "btn btn-secondary" %>
       <%= link_to 'New Project', new_client_project_path(@client), class: 'btn btn-success' %>
-      <%= link_to "Show Archived Projects", client_projects_path(@client, archived: true), class: "btn btn-warning" %>
+      <%= link_to "Show Archived Projects", client_projects_path(@client, archived: true), class: "btn btn-success" %>
     <% else %>
-      <%= link_to "Show Active Projects", client_projects_path(@client), class: "btn btn-primary" %>
+      <%= link_to "Show Active Projects", client_projects_path(@client), class: "btn btn-success" %>
     <% end %>
   </div>
 
