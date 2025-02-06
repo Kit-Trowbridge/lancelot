@@ -5,9 +5,15 @@
     <% end %>
 
     <div class="navbar-tools">
-      <% if user_signed_in? && Timestamp.last.present? && Timestamp.last.end_time.present? %>
-        <%= link_to new_timesheet_timestamp_path(Timestamp.last.timesheet), class: "stopwatch-btn" do %>
-          <i class="fas fa-clock"></i> Start
+      <% if user_signed_in? && Timestamp.last.present? %>
+        <% if Timestamp.last.end_time.present? %>
+          <%= link_to new_timesheet_timestamp_path(Timestamp.last.timesheet), class: "stopwatch-btn" do %>
+            <i class="fas fa-clock"></i> Start
+          <% end %>
+        <% else %>
+          <%= link_to timesheet_timestamp_path(Timestamp.last.timesheet, Timestamp.last), class: "stopwatch-btn" do %>
+            <i class="fas fa-clock"></i> Stop
+          <% end %>
         <% end %>
       <% end %>
     </div>
