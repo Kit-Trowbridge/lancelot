@@ -3,14 +3,53 @@
   border-bottom: 2px solid #7D0101;
   padding: 0.5rem 2rem;
   font-family: 'MedievalSharp', cursive;
+  display: flex;
+  align-items: center;
+
+  .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 
   .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+
     img {
       height: 50px;
       transition: transform 0.3s ease;
 
       &:hover {
         transform: scale(1.05);
+      }
+    }
+  }
+
+  .navbar-tools {
+    margin-right: 1rem;
+
+    .stopwatch-btn {
+      border: 2px solid #7D0101;
+      color: #7D0101;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+
+      i {
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        background-color: #7D0101;
+        color: #FFFFFF;
+        transform: translateY(-2px);
       }
     }
   }
@@ -39,22 +78,6 @@
     &.active {
       color: #7D0101;
       font-weight: bold;
-    }
-  }
-
-  .btn {
-    border: 2px solid #7D0101;
-    color: #7D0101;
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-    margin-left: 1rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-
-    &:hover {
-      background-color: #7D0101;
-      color: #FFFFFF;
-      transform: translateY(-2px);
     }
   }
 
@@ -88,28 +111,14 @@
     }
   }
 
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #7D0101;
-    transition: all 0.3s ease;
+  .broken-sword-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
 
     &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 0 2px rgba(125, 1, 1, 0.2);
+      transform: rotate(-15deg);
     }
-  }
-}
-
-// Medieval icon for "Take a Break"
-.broken-sword-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 0.5rem;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: rotate(-15deg);
   }
 }

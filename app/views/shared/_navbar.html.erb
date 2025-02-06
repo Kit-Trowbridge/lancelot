@@ -4,12 +4,20 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
+    <div class="navbar-tools">
+      <% if user_signed_in? && Timestamp.last.present? && Timestamp.last.end_time.present? %>
+        <%= link_to new_timesheet_timestamp_path(Timestamp.last.timesheet), class: "stopwatch-btn" do %>
+          <i class="fas fa-clock"></i> Start
+        <% end %>
+      <% end %>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to dashboard_path, class: "nav-link #{current_page?(dashboard_path) ? 'active' : ''}" do %>
