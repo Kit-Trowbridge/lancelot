@@ -10,11 +10,11 @@
 <% end %>-->
 
 <%= simple_form_for question,
-                    html: { data: { controller: "reset-form", action: "keydown->reset-form#submitOnEnter turbo:submit-end->reset-form#reset" }} do |f| %>
+   html: { data: { controller: "reset-form", action: "keydown->reset-form#submitOnEnter turbo:submit-end->reset-form#reset" }} do |f| %>
   <div class="form-group">
     <%= f.input :user_question,
                 label: false,
-                placeholder: "Ask Merlin...",
+                 <!--placeholder: "Ask Merlin...",-->
                 input_html: {
                   class: 'chat-input',
                   rows: 4

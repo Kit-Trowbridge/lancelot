@@ -16,3 +16,12 @@
     color: white;
   }
 }
+
+.btn-lance {
+  background-image: asset-url("lancelot.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #7D0101;
+  border-radius: 50%;
+}
