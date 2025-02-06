@@ -11,8 +11,8 @@
             <i class="fas fa-clock"></i> Start
           <% end %>
         <% else %>
-          <%= link_to timesheet_timestamp_path(Timestamp.last.timesheet, Timestamp.last), class: "stopwatch-btn" do %>
-            <i class="fas fa-clock"></i> Stop
+          <%= link_to timesheet_timestamp_path(Timestamp.last.timesheet, Timestamp.last), class: "stopwatch-btn btn-lance" do %>
+            <i class="fas fa-clock"></i><span>Stop</span>
           <% end %>
         <% end %>
       <% end %>
