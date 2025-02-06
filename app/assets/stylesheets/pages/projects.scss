@@ -95,11 +95,11 @@
       }
 
       &.btn-success {
-        border-color: #7D0101;
-        color: #7D0101;
+        border-color: #28a745;
+        color: #28a745;
 
         &:hover {
-          background-color: #7D0101;
+          background-color: #28a745;
           color: #FFFFFF;
         }
       }
@@ -147,4 +147,8 @@
       gap: 1rem;
     }
   }
+}
+
+.container {
+  @extend .projects-container;
 }
