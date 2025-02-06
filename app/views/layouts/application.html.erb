@@ -17,8 +17,8 @@
 </head>
 
 <body>
-<% unless current_page?(new_user_session_path) %>
-  <%= render "shared/lancelot_nav" %>
+<% unless current_page?(new_user_session_path) || current_page?(unauthenticated_root_path) %>
+  <%= render "shared/navbar" %>
 <% end %>
 
 <%= render "shared/flashes" %>
