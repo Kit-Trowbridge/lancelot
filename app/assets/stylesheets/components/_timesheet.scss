@@ -1,4 +1,5 @@
 .timesheet {
+  margin-top: 32px;
 
   // .btn-medieval {
   //   a {
@@ -66,8 +67,14 @@
       animation: pop-up 0.5s ease-in-out;
     }
   }
+  h1 {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  margin-bottom: 16px;
 }
 .timesheet-index {
+  margin-top: 32px;
   background: none !important;
   background-color: transparent !important;
   color: $primary;
